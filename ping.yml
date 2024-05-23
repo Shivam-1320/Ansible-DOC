@@ -1,0 +1,12 @@
+---
+- name: add a new user #use as a description to easy understand for others 
+  hosts: prod #if your prod is not configured you can give ip also here 
+  tasks: 
+    - name: Pankaj Exists with UID 4500 #for understanding what your scipt does
+      ansible.builtin.user: #This is the user add module 
+  
+       name: Pankaj #name of the user which yu want to be add on manage host
+       comment: Network enginner
+       uid: 4500
+       state: present  
+         
