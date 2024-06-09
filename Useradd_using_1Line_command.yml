@@ -1,6 +1,6 @@
  
 #using this single line of command you can create user with using ansible tool 
 
-ansible prod -m user -a "name=Panakaj uid=5002 state=present" 
+ansible prod -m user -a "name=Panakaj uid=5002 state=present"  #replace prod with your ip or dns 
 
 #-m is define module | -a is  use for define argument | uid is optional | state=present use for create user (replace with absent for delete user )
