@@ -1,0 +1,9 @@
+---
+- name: start and eneable apache httpd service #descrption about what the script does
+  hosts: prod #you can mention single ip also here 
+  tasks :
+    - name: service start and enabled 
+      ansible.builtin.service: #this is the module name
+        name: httpd  #service name which you want to perform task 
+        enabled: true  #for enabled service
+        state: started #for strat service 
