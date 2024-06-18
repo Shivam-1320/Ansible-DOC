@@ -1,0 +1,13 @@
+---
+- name: install and start multi service #description about what the scipt does 
+  hosts: prod #your servers here where you want to run ths script 
+  tasks:
+    - name: install vsftpd package with yum 
+      ansible.builtin.yum: #module name 
+        name: vsftpd #service name which you want to install
+        state: latest #that means latest version of the service 
+    - name: start vfftpd service
+      ansible.builtin.service: #module name 
+        name: vsftpd #service name
+        state: started #for start the service
+        enabled: true # for enabled the service:
