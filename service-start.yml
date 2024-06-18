@@ -6,4 +6,4 @@
       ansible.builtin.service: #this is the module name
         name: httpd  #service name which you want to perform task 
         enabled: true  #for enabled service
-        state: started #for strat service 
+        state: started #for start service 
