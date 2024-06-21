@@ -1,5 +1,5 @@
 ---
-- name: install and start multi service #description about what the scipt does 
+- name: install and start service #description about what the scipt does 
   hosts: prod #your servers here where you want to run ths script 
   tasks:
     - name: install vsftpd package with yum 
