@@ -1,0 +1,9 @@
+---
+- name: copy contect to the host destination
+  hosts: 192.168.1.50
+  tasks:
+
+    - name: copy content to the root home dir
+      copy:
+        content: "this is the top secret file"
+        dest: /root/secret_file
