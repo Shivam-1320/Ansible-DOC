@@ -1,0 +1,25 @@
+---
+- name: package install using loop
+  hosts: all
+  become: yes
+  tasks:
+    - name: install the package
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+       - php
+       - mariadb
+      when: inventory_hostname in groups['prod']
+
+    - name: install the security tool group in test group
+      yum:
+        name: "@Security tools"
+        state: present
+
+      when: inventory_hostname in groups['test']
+
+    - name: update all packages to the latest version
+      yum:
+        name: '*'
+        state: latest
