@@ -1,0 +1,12 @@
+---
+- name: package install using loop
+  hosts: all
+  tasks:
+    - name: install the package
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+       - php
+       - mariadb
+      when: inventory_hostname in groups['host']                                             
