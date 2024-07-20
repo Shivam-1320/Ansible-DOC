@@ -1,0 +1,16 @@
+---
+- name: Install php and httpd while distro is matched
+  hosts: all
+  vars:
+    supported_distros:
+      - RedHat
+      - Fedora
+  tasks:
+   - name: install php and http service
+     yum:
+       name: "{{ item }}"
+       state: present
+     loop:
+        - php
+        - httpd
+     when: ansible_distribution in supported_distros
